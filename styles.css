@@ -23,29 +23,31 @@ body {
   display: none;
 }
 
+/* Passcode / password gate — dark forest-green variation of #004526 */
 .password-gate {
   min-height: 100vh;
   display: grid;
   place-items: center;
   padding: 1.5rem;
-  background: linear-gradient(rgba(69, 35, 35, 0.8), rgba(69, 35, 35, 0.8)),
+  background: linear-gradient(rgba(0, 69, 38, 0.85), rgba(0, 69, 38, 0.85)),
     url("./IMG_1179.JPG") center/cover;
 }
 
 .password-card {
-  background: rgba(255, 253, 249, 0.95);
+  background: rgba(255, 255, 250, 0.96);
   padding: 2rem;
   border-radius: 1.25rem;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
   max-width: 420px;
   width: 100%;
   text-align: center;
+  border: 1px solid rgba(0, 69, 38, 0.12);
 }
 
 .password-card h2 {
   margin-top: 0;
   font-family: 'Lora', serif;
-  color: var(--accent-dark);
+  color: #004526; /* heading uses the forest green */
 }
 
 .password-form {
@@ -63,6 +65,19 @@ body {
   margin: 0.75rem 0 0;
   color: var(--accent);
   font-weight: 700;
+}
+
+/* Style the enter button inside the password card to match #004526 */
+.password-card .password-form button {
+  background: #004526;
+  color: #ffffff;
+  padding: 0.9rem 1.2rem;
+  border-radius: 0.6rem;
+  border: none;
+  cursor: pointer;
+}
+.password-card .password-form button:hover {
+  background: #00381d;
 }
 
 .hero {
