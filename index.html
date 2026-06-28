@@ -18,7 +18,6 @@
       <div class="password-card">
         <h2>Access required</h2>
         <p>Please enter the password to view this wedding website.</p>
-        <p class="password-hint">Hint: the password is copper</p>
         <form id="passwordForm" class="password-form">
           <input type="password" id="passwordInput" placeholder="Enter password" autocomplete="current-password" required />
           <button type="submit">Enter</button>
@@ -121,16 +120,28 @@
 
         const isValidPassword = (value) => value.trim().toLowerCase() === correctPassword;
 
-        form.addEventListener('submit', (event) => {
-          event.preventDefault();
+        const handlePasswordAttempt = () => {
           if (isValidPassword(input.value)) {
             unlockSite();
-            return;
+            return true;
           }
 
           error.textContent = 'That password is incorrect. Please try again.';
           input.value = '';
           input.focus();
+          return false;
+        };
+
+        form.addEventListener('submit', (event) => {
+          event.preventDefault();
+          handlePasswordAttempt();
+        });
+
+        form.addEventListener('click', (event) => {
+          if (event.target.tagName === 'BUTTON') {
+            event.preventDefault();
+            handlePasswordAttempt();
+          }
         });
       })();
     </script>
