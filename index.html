@@ -18,7 +18,7 @@
       <div class="password-card">
         <h2>Access required</h2>
         <p>Please enter the password to view this wedding website.</p>
-        <form id="passwordForm" class="password-form">
+        <form id="passwordForm" class="password-form" onsubmit="event.preventDefault(); const gate = document.getElementById('passwordGate'); const content = document.getElementById('siteContent'); const input = document.getElementById('passwordInput'); const error = document.getElementById('passwordError'); if (input.value.trim().toLowerCase() === 'copper') { gate.classList.add('hidden'); content.classList.remove('hidden'); content.setAttribute('aria-hidden', 'false'); } else { error.textContent = 'That password is incorrect. Please try again.'; input.value = ''; input.focus(); } return false;">
           <input type="password" id="passwordInput" placeholder="Enter password" autocomplete="current-password" required />
           <button type="submit">Enter</button>
         </form>
@@ -103,47 +103,5 @@
       </footer>
     </div>
 
-    <script>
-      (function () {
-        const correctPassword = 'copper';
-        const gate = document.getElementById('passwordGate');
-        const content = document.getElementById('siteContent');
-        const form = document.getElementById('passwordForm');
-        const input = document.getElementById('passwordInput');
-        const error = document.getElementById('passwordError');
-
-        const unlockSite = () => {
-          gate.classList.add('hidden');
-          content.classList.remove('hidden');
-          content.setAttribute('aria-hidden', 'false');
-        };
-
-        const isValidPassword = (value) => value.trim().toLowerCase() === correctPassword;
-
-        const handlePasswordAttempt = () => {
-          if (isValidPassword(input.value)) {
-            unlockSite();
-            return true;
-          }
-
-          error.textContent = 'That password is incorrect. Please try again.';
-          input.value = '';
-          input.focus();
-          return false;
-        };
-
-        form.addEventListener('submit', (event) => {
-          event.preventDefault();
-          handlePasswordAttempt();
-        });
-
-        form.addEventListener('click', (event) => {
-          if (event.target.tagName === 'BUTTON') {
-            event.preventDefault();
-            handlePasswordAttempt();
-          }
-        });
-      })();
-    </script>
   </body>
 </html>
