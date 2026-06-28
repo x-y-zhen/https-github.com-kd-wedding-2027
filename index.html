@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Wedding</title>
+    <meta name="description" content="A beautiful wedding website template you can personalize." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css?v=2" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="eyebrow">You are warmly invited to celebrate</p>
+        <p class="hero-subtitle">the wedding of</p>
+        <h1>
+          Katherine<br />
+          <span class="small-amp">&</span><br />
+          <span class="name-line">David</span>
+        </h1>
+        <p class="hero-date">Saturday, March 20, 2027 • Josephine Butler Parks Center</p>
+        <a class="button" href="#rsvp">RSVP</a>
+      </div>
+    </header>
+
+    <main>
+      <section class="section intro">
+        <h2>David and Katherine cordially invite you to celebrate their union.</h2>
+        <p>
+          This celebration will be held at historic Josephine Butler Parks Center, overlooking Meridian Hill and Malcolm X Park. Josephine Butler organized the first union of black women laundry workers in the country, helped to desegregate the schools in Adams Morgan, and co-founded the D.C. Statehood Party as a means for advancing civil rights and black power in a majority-black city controlled by the U.S. Congress. We are excited to host our wedding celebration at this historic mansion named after an activist and leader.
+        </p>
+      </section>
+
+      <section class="section details">
+        <div class="card">
+          <h3>When</h3>
+          <p>Saturday, March 20, 2027</p>
+          <p>Ceremony at 10:00 AM</p>
+        </div>
+        <div class="card">
+          <h3>Where</h3>
+          <p>Josephine Butler Parks Center</p>
+          <p>2437 15th St NW </p>
+          </p>Washington, DC, 20009</p>
+        </div>
+        <div class="card">
+          <h3>Dress Code</h3>
+          <p>Traditional & formal attire warmly welcomed</p>
+        </div>
+      </section>
+
+      <section class="section schedule">
+        <h2>Our Celebration</h2>
+        <ul>
+          <li><span>9:00 AM</span> Guest arrival, tea and coffee service, and welcome </li>
+          <li><span>10:00 AM</span> Ceremony and vows </li>
+          <li><span>11:00 AM</span> Brunch, live music, dancing </li>
+        </ul>
+      </section>
+
+      <section class="section rsvp" id="rsvp">
+        <h2>RSVP</h2>
+        <p>Please let us know if you can join us by December 1, 2026.</p>
+        <form action="mailto:kandd2027@gmail.com" method="post" enctype="text/plain">
+          <input type="text" name="name" placeholder="Your name" />
+          <input type="email" name="email" placeholder="Email address" />
+          <select name="response">
+            <option>Attending</option>
+            <option>Regretfully declining</option>
+          </select>
+          <select name="plus_one">
+            <option value="n/a">N/A</option>
+            <option value="no">I am attending solo</option>
+            <option value="yes">I am bringing a +1</option>
+          </select>
+          <textarea name="notes" placeholder="Any dietary notes or questions?"></textarea>
+          <button type="submit">Send RSVP</button>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>Made with love for your special day.</p>
+    </footer>
+  </body>
+</html>
