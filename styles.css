@@ -58,6 +58,12 @@ body {
   margin: 0;
 }
 
+.password-hint {
+  margin: 0.6rem 0 0;
+  font-size: 0.95rem;
+  color: #7a6470;
+}
+
 .password-error {
   min-height: 1.2rem;
   margin: 0.75rem 0 0;

@@ -3,6 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, max-age=0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>Our Wedding</title>
     <meta name="description" content="A beautiful wedding website template you can personalize." />
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +18,7 @@
       <div class="password-card">
         <h2>Access required</h2>
         <p>Please enter the password to view this wedding website.</p>
+        <p class="password-hint">Hint: the password is copper</p>
         <form id="passwordForm" class="password-form">
           <input type="password" id="passwordInput" placeholder="Enter password" autocomplete="current-password" required />
           <button type="submit">Enter</button>
@@ -115,9 +119,11 @@
           content.setAttribute('aria-hidden', 'false');
         };
 
+        const isValidPassword = (value) => value.trim().toLowerCase() === correctPassword;
+
         form.addEventListener('submit', (event) => {
           event.preventDefault();
-          if (input.value.trim().toLowerCase() === correctPassword) {
+          if (isValidPassword(input.value)) {
             unlockSite();
             return;
           }
