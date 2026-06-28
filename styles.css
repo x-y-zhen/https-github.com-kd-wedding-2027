@@ -1,5 +1,5 @@
 :root {
-  --bg: #e9f1db;
+  --bg: #e6ebc8;
   --text: #3d2b2b;
   --accent: #a64f48;
   --accent-dark: #7f3b38;
@@ -136,6 +136,17 @@ button {
 .button:hover,
 button:hover {
   background: var(--accent-dark);
+}
+
+/* Make RSVP buttons use a dark forest green to stand out */
+.hero .button,
+.rsvp button {
+  background: #184f28; /* dark forest green */
+}
+
+.hero .button:hover,
+.rsvp button:hover {
+  background: #0f3a20; /* darker on hover */
 }
 
 .section {
