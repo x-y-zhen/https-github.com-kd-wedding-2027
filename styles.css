@@ -243,3 +243,68 @@ footer {
     gap: 0.25rem;
   }
 }
+
+/* FAQ accordion (uses native <details>/<summary> for accessibility) */
+.faq {
+  padding: 3rem 1.5rem;
+  max-width: 900px;
+  margin: 0 auto 3rem;
+}
+
+.faq h2 {
+  text-align: center;
+  font-family: 'Lora', serif;
+  margin-bottom: 1rem;
+}
+
+.faq details {
+  background: var(--card);
+  border: 1px solid var(--soft);
+  border-radius: 0.75rem;
+  margin: 0.75rem 0;
+  padding: 0.6rem 0.75rem;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
+}
+
+.faq summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 0.5rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary .arrow {
+  transition: transform 0.2s ease;
+  margin-left: 1rem;
+  color: var(--accent);
+}
+
+.faq details[open] summary .arrow {
+  transform: rotate(90deg);
+}
+
+.faq .answer {
+  padding-top: 0.75rem;
+  color: var(--text);
+  line-height: 1.5;
+}
+
+.faq summary:focus {
+  outline: 3px solid rgba(166,79,72,0.15);
+  outline-offset: 3px;
+  border-radius: 0.5rem;
+}
+
+@media (max-width: 700px) {
+  .faq {
+    padding: 2rem 1rem;
+  }
+}
