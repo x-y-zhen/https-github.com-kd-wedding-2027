@@ -32,7 +32,7 @@
         <section class="section intro">
           <h2>David and Katherine cordially invite you to celebrate their union.</h2>
           <p>
-            This celebration will be held at historic Josephine Butler Parks Center, overlooking Meridian Hill and Malcolm X Park. Josephine Butler organized the first union of black women laundry workers in the country, helped to desegregate the schools in Adams Morgan, and co-founded the D.C. Statehood Party as a means for advancing civil rights and black power in a majority-black city controlled by the U.S. Congress. We are excited to host our wedding celebration at this historic mansion named after an activist and leader.
+            This celebration will be held at historic Josephine Butler Parks Center, overlooking Meridian Hill and Malcolm X Park. Josephine Butler organized the first union of black women laundry[...]
           </p>
         </section>
 
@@ -50,7 +50,7 @@
           </div>
           <div class="card">
             <h3>Dress Code</h3>
-            <p>Traditional & formal attire warmly welcomed</p>
+            <p>Traditional &amp; formal attire warmly welcomed</p>
           </div>
         </section>
 
@@ -82,6 +82,60 @@
             <button type="submit">Send RSVP</button>
           </form>
         </section>
+
+        <section class="faq" id="faq">
+          <h2>Frequently Asked Questions</h2>
+
+          <details>
+            <summary>
+              When is the RSVP deadline?
+              <span class="arrow">▸</span>
+            </summary>
+            <div class="answer">
+              Please confirm your RSVP and any plus ones by December 31st, 2026.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              Are children allowed?
+              <span class="arrow">▸</span>
+            </summary>
+            <div class="answer">
+              Yes, please specify the number and age of the children attending.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              Will you be reserving a hotel block for people coming out of town?
+              <span class="arrow">▸</span>
+            </summary>
+            <div class="answer">
+              We are looking into hotel options near both our home and the venue! Details soon-to-come.
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              Where do I park if driving to the venue?
+              <span class="arrow">▸</span>
+            </summary>
+            <div class="answer">
+              There is very limited parking at the venue and possibly some street parking. We suggest taking public transit or using rideshare (we recommend Empower)!
+            </div>
+          </details>
+
+          <details>
+            <summary>
+              Is there a registry?
+              <span class="arrow">▸</span>
+            </summary>
+            <div class="answer">
+              No. There is no expectation or desire for any gifts. However, should you insist, we'd be grateful for either cash or a transfer with Venmo/Zelle/Paypal.
+            </div>
+          </details>
+        </section>
       </main>
 
       <footer>
@@ -96,6 +150,20 @@
       if (window.localStorage.getItem(ACCESS_KEY) !== 'granted' && window.sessionStorage.getItem(ACCESS_KEY) !== 'granted') {
         window.location.href = 'index.html';
       }
+
+      (function () {
+        // FAQ accordion behavior: open one at a time
+        const items = document.querySelectorAll('.faq details');
+        items.forEach((d) => {
+          d.addEventListener('toggle', () => {
+            if (d.open) {
+              items.forEach((other) => {
+                if (other !== d) other.open = false;
+              });
+            }
+          });
+        });
+      })();
     </script>
   </body>
 </html>
